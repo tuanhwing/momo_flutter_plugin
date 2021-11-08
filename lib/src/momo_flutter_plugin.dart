@@ -10,6 +10,12 @@ import 'enums/enums.dart';
 class MoMoFlutterPlugin {
   static const MethodChannel _channel = MethodChannel(moEventChannel);
 
+  ///Initialize with environment parameter
+  static void initialize(MoMoPaymentEnvironments environment) {
+
+    _channel.invokeMethod(MoMoFlutterPluginMethods.initialize, environment == MoMoPaymentEnvironments.develop);
+  }
+
   ///Make payment request using [MoMoPaymentModel] information
   ///
   /// return [MoMoPaymentResult] data

@@ -10,5 +10,6 @@ struct MomoFlutterPluginChannels {
 }
 
 struct MomoFlutterPluginMethods {
+    static let initialize = "initialize"
     static let makePayment = "makePayment"
 }
