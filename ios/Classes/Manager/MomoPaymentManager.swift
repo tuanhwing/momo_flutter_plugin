@@ -13,25 +13,29 @@ class MomoPaymentManager {
     init(){}
     
     private var momoFlutterResult:FlutterResult? = nil
-    
-    private let appName = "momo"
-    
+    private var isDevelopment:Bool = true
+        
     /**
-     Add observer of NotificationCenter
+     * Add observer of NotificationCenter
      */
-    func initlize() {
+    func initlize(develop:Bool?) {
         Logger.d("start")
+        isDevelopment = develop ?? true
         NotificationCenter.default.addObserver(self, selector: #selector(self.NoficationCenterTokenStartRequest), name:NSNotification.Name(rawValue: "NoficationCenterTokenStartRequest"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.NoficationCenterTokenReceived), name:NSNotification.Name(rawValue: "NoficationCenterTokenReceived"), object: nil)
+        
         Logger.d("end")
     }
     
+    /**
+     * Make payment request with information
+     */
     func makePaymentRequest(info:NSMutableDictionary, result:@escaping FlutterResult) {
         Logger.d(info)
         
         //Result callback that used when receive notification from momo sdk
         momoFlutterResult = result
-        let appScheme = "\(appName)://app"
+        let appScheme = "\(MOMO_APP_BUNDLE_ID)://app"
         
         if UIApplication.shared.canOpenURL(URL(string: appScheme)!) {
             MoMoPayment.createPaymentInformation(info: info)

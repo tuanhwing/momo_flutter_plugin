@@ -1,6 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.vn.momo_flutter_plugin_example">
-   <application
+   <application tools:replace="android:label"
         android:label="momo_flutter_plugin_example"
         android:icon="@mipmap/ic_launcher">
         <activity

@@ -4,6 +4,7 @@ import 'package:flutter/foundation.dart';
 const String moEventChannel = "momo_flutter_plugin";
 
 class MoMoFlutterPluginMethods {
+  static const String initialize = "initialize";
   static const String makePayment = "makePayment";
 }
 
