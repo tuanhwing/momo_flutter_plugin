@@ -1,5 +1,5 @@
 name: momo_flutter_plugin
-description: A Momo payment Flutter plugin. This package simplify the
+description: A Momo payment Flutter plugin for iOS and Android.
 version: 1.0.0
 # author: Tuấn Hwing <tuanhwing2014@gmail.com>
 homepage: https://github.com/tuanhwing/momo_flutter_plugin
