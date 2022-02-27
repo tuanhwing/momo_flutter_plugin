@@ -78,7 +78,7 @@ At a minimum, this SDK is designed to work with Android SDK 14.
         MoMoPaymentModel(
             merchantName: "CGV Cinemas",
             merchantCode: "CGV01",
-            appScheme: "momob0ce20211106",
+            appScheme: "YOUR_APP_SCHEME",//Repalce `YOUR_APP_SCHEME` with `IOS SCHEME ID`
             amount: 20000,
             orderId: "ID123456",
             orderLabel: "",
